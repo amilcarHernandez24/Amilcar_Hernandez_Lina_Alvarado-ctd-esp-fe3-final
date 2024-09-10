@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root{
---Beige:#F9F6ED;
+--beige:#F9F6ED;
 --light-card:#FFFCF4;
 --dark-background: #131A22;
 --dark-card:#0A2544;
@@ -13,31 +13,21 @@
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  background-color: var(--Beige);
+  background-color: var(--beige);
 }
 
 .BgBody-light{
-  background-color: var(--Beige);
+  background-color: var(--beige);
 }
 
 /* .BgBody-dark{} */
 
-p, a
-
-{
+p, a{
   font-weight:500 ;
   color: var(--color-text-lightTheme);
 }
 
 
-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 300px;
-  height: 100px;
-  margin: 0 auto;
-}
 
 .card{
   display: flex;
