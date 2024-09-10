@@ -1,0 +1,46 @@
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+}
+
+.logo{
+  height: 50px ;
+}
+
+.div_links{
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.nav_link{
+  color: var(--main-blue);
+  text-decoration: none;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.nav_link_active{
+  text-decoration: none;
+  margin: 5px;
+  cursor: pointer;
+  font-weight: bolder;
+  color: var(--dark-blue);
+}
+
+.nav_light{
+  background-color: var(--Beige);
+  box-shadow: 0px 4px 28.1px 0px rgba(0, 0, 0, 0.06);
+}
+
+.button_light{
+  border: none;
+  background-color: var(--main-blue);
+  border-radius:100%;
+  padding: 16px;
+}
+.button_light:hover{
+  background-color: var(--dark-blue);
+}

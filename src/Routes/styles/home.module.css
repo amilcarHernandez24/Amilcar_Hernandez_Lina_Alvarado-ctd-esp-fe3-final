@@ -1,0 +1,22 @@
+.main_section_title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main_section_title img{
+width: 40%;
+}
+
+.div_main_title{
+    margin-left: 6rem;
+}
+
+h1{
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.title_light{
+    color: var(--main-blue);
+}
