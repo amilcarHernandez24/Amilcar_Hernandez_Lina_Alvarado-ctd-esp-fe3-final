@@ -20,3 +20,13 @@ h1{
 .title_light{
     color: var(--main-blue);
 }
+
+.card_grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Cinco columnas */
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    max-width: 70%; /* Ancho máximo para ajustar a 5 columnas */
+    margin: 0 auto;
+}
