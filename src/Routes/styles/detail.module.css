@@ -1,0 +1,36 @@
+.detail_container{
+    height: 73.5vh;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container_info{
+    background-color: var(--light-card);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+}
+
+.container_header{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container_header h3{
+   color: var(--main-blue);
+}
+
+.container_header img{
+    width: 100px;
+    border-radius: 50%;
+}
+
+.body_item h4{
+    color: var(--main-blue);
+}
+
+.body_item span{
+    font-weight: 500;
+    color: var(--color-text-lightTheme);
+}
+
