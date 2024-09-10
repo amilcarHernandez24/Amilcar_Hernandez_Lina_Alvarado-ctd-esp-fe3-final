@@ -1,0 +1,22 @@
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:var(--main-blue);
+    color: white;
+    padding: 4rem 4rem;
+  }
+  
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-logo {
+    height: 50px; 
+  }
+
+  .subtitle{
+    font-weight: bold;
+  }
