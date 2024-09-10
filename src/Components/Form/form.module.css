@@ -6,6 +6,7 @@ form{
     height: 200px;
     margin: 0 auto;
     gap: 1.5rem;
+    
   }
 
 .input{
@@ -13,6 +14,10 @@ form{
     border-bottom: 1px solid #044793;
     background: var(--beige);
     padding: 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+  
 }
 
 .label{
@@ -39,3 +44,15 @@ font-family: "Montserrat", sans-serif;
 .button_form:hover{
     background: var(--dark-blue);
 }
+
+.error {
+    color: rgb(182, 70, 70);
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .success {
+    color: green;
+    font-size: 16px;
+    margin-top: 10px;
+  }

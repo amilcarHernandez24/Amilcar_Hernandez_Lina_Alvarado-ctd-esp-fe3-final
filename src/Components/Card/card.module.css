@@ -2,13 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 196px;
-  height: 206px;
+  height: 210px;
   border-radius: 12px;
   padding: 16px;
-  background-color: #FFFCF4;
+  background-color: var(--light-card);
 }
 
+.card:hover {
+  box-shadow: 0px 4px 4.7px 0px rgba(126, 126, 126, 0.09);
+}
 .card img {
   width: 60px;
   height: 60px;
@@ -19,3 +23,24 @@
   text-align: center;
   color: var(--main-blue);
 }
+.card h3:hover {
+  color: var(--dark-blue);
+  text-decoration: underline;
+}
+.link_text {
+  text-decoration: none;
+}
+
+.favButton{
+  border: none;
+  border-radius: 20px;
+  background: #7d9cbc;
+  padding: 0.5rem;
+  color: var(--beige);
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  }
+  
+  .favButton:hover{
+      background: var(--main-blue);
+  }

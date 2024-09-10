@@ -38,7 +38,7 @@ const Detail = () => {
           </h2>
           <section className={styles.container_info}>
             <div className={styles.container_header}>
-              <img src={profileImg} />
+              <img src={profileImg} alt="profile dentist"/>
               <h3>{dentist.name}</h3>
             </div>
             <section className={styles.container_body}>

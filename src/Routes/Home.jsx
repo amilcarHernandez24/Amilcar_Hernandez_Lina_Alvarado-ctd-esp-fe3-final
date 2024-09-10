@@ -17,9 +17,11 @@ const Home = () => {
       console.log("dentro del useEffect", response.data);
     });
   }, []);
+
   console.log("Afuera", dentists);
+
   return (
-    <main className="">
+    <main>
       <section className={styles.main_section_title}>
         <div className={styles.div_main_title}>
           <h1 className={styles.title_light}>Encuentra a tu Dentista Ideal</h1>
@@ -30,7 +32,8 @@ const Home = () => {
         </div>
         <img src={dentistImg} alt="" />
       </section>
-
+      
+      <section  className={styles.container_cards}>
       <h2>Conoce a Nuestros Dentistas Destacados</h2>
       <p>Agrega a tus favoritos</p>
 
@@ -38,6 +41,7 @@ const Home = () => {
         {dentists.map((dentist) => (
           <Card key={dentist.id} currentDentist={dentist} />
         ))}
+      </section>
       </section>
     </main>
   );
