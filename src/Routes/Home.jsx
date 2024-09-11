@@ -1,24 +1,13 @@
 import "../index.css";
-import axios from "axios";
-import { useEffect, useState } from "react";
 import styles from "./styles/home.module.css";
 import Card from "../Components/Card/Card";
 import dentistImg from "../assets/dentist.jpg";
+import { useDentistStates } from "../Components/utils/global.context";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
-  const [dentists, setDentists] = useState([]);
-  const url = "https://jsonplaceholder.typicode.com/users";
-
-  useEffect(() => {
-    axios.get(url).then((response) => {
-      setDentists(response.data);
-      console.log("dentro del useEffect", response.data);
-    });
-  }, []);
-
-  console.log("Afuera", dentists);
+ const {dentists} = useDentistStates()
 
   return (
     <main>
