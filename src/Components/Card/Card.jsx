@@ -1,12 +1,16 @@
 import styles from "./card.module.css";
 import profileImg from "../../assets/profile_dentist.webp";
 import { Link } from "react-router-dom";
+import { useDentistStates } from "../utils/global.context";
 
 const Card = ({ currentDentist }) => {
   const { name, username, id } = currentDentist;
 
+  const { setFavs } = useDentistStates();
+
   const addFav = () => {
     // Aqui iria la logica para agregar la Card en el localStorage
+    setFavs((favs)=> [...favs, currentDentist])
   };
 
   return (
