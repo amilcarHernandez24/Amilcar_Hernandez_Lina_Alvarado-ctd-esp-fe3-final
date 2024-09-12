@@ -1,14 +1,24 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/Logo.svg";
 import iconMoon from "../../assets/icon_moon.svg";
+import iconSun from "../../assets/icon_sun.svg";
 import styles from "./navbar.module.css";
+import { useDentistStates } from "../utils/global.context";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
+  const { state, dispatch } = useDentistStates();
+
+  const handleTheme = () => {
+    dispatch({ type: "TOGGLE_THEME" });
+  };
+
   return (
     <nav className={styles.nav_light}>
-      <img src={logo} className={styles.logo} alt="Logo Dental Studio" />
+      <Link to={"/"}>
+        <img src={logo} className={styles.logo} alt="Logo Dental Studio" />
+      </Link>
       <div className={styles.div_links}>
         <NavLink
           to="/"
@@ -35,8 +45,11 @@ const Navbar = () => {
           Favoritos
         </NavLink>
       </div>
-      <button className={styles.button_light}>
-        <img src={iconMoon} alt="" />
+      <button
+        className={state.theme ? styles.button_light : styles.button_dark}
+        onClick={handleTheme}
+      >
+        <img src={state.theme ? iconMoon : iconSun} alt="" />
       </button>
     </nav>
   );
