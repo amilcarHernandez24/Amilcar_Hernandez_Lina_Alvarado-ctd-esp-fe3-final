@@ -4,14 +4,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import profileImg from "../assets/profile_dentist.webp";
 import Spinner from "../Components/Spinner/Spinner";
+import { useDentistStates } from "../Components/utils/global.context";
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Detail = () => {
+  const { state } = useDentistStates();
+
   const [dentist, setDentist] = useState({});
   const [loading, setLoading] = useState(true);
   const params = useParams();
-  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
   console.log(params);
   const url = `https://jsonplaceholder.typicode.com/users/${params.id}`;
 
@@ -32,6 +33,7 @@ const Detail = () => {
       {loading ? (
         <Spinner />
       ) : (
+        <section className={!state.theme && styles.detail_dark}>
         <section className={styles.detail_container}>
           <h2 className={styles.title}>
             Conoce más información de nuestro dentista
@@ -69,6 +71,7 @@ const Detail = () => {
               </div>
             </section>
           </section>
+        </section>
         </section>
       )}
     </>

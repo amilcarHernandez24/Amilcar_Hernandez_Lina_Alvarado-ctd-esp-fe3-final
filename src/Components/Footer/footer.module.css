@@ -19,3 +19,12 @@
   .subtitle{
     font-weight: bold;
   }
+
+  span a{
+    text-decoration: none;
+    color: var(--beige);
+  }
+
+  span a:hover{
+    text-decoration: underline;
+  }

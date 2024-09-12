@@ -4,13 +4,11 @@ import Card from "../Components/Card/Card";
 import dentistImg from "../assets/dentist.jpg";
 import { useDentistStates } from "../Components/utils/global.context";
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-
 const Home = () => {
   const { state } = useDentistStates();
 
   return (
-    <main>
+    <main className={state.theme ? "" : styles.home_dark} >
       <section className={styles.main_section_title}>
         <div className={styles.div_main_title}>
           <h1 className={styles.title_light}>Encuentra a tu Dentista Ideal</h1>

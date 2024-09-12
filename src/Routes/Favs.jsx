@@ -2,14 +2,13 @@ import Card from "../Components/Card/Card";
 import { useDentistStates } from "../Components/utils/global.context";
 import styles from "./styles/favs.module.css"
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-
 const Favs = () => {
   const { state } = useDentistStates();
   const favs = state.favs;
 
   return (
-    <section className={styles.section_favs}>
+    <main className={state.theme ? "" : styles.section_dark}>
+<section className={styles.section_favs}>
       {favs.length === 0 ? (
         <div>
           <h2>No hay dentistas favoritos</h2>
@@ -27,6 +26,8 @@ const Favs = () => {
         </>
       )}
     </section>
+    </main>
+    
   );
 };
 

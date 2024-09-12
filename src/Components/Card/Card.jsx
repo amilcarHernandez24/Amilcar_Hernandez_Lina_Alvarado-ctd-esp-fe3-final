@@ -18,8 +18,12 @@ const Card = ({ currentDentist }) => {
   };
 
   return (
-    <div className={styles.card}>
-      <img src={profileImg} alt="profile dentist" />
+    <div className={state.theme ? styles.card : styles.card_dark}>
+      <img
+        className={styles.imgProfile}
+        src={profileImg}
+        alt="profile dentist"
+      />
       <Link to={"/detail/" + id} className={styles.link_text}>
         <h3>{name}</h3>
       </Link>

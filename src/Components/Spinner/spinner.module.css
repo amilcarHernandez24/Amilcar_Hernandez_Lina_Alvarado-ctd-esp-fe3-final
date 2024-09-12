@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-color: var(--main-blue);
   }
   
   .ring {
@@ -41,7 +42,7 @@
   }
   
   .center span {
-    color: var(--color-text-lightTheme);
+    color: var(--beige);
     font-family: "Montserrat", sans-serif;
     font-size: 1rem;
     text-transform: uppercase;
@@ -53,7 +54,7 @@
   
   @keyframes text {
     50% {
-      color: #000
+      color: #000;
     }
   }
   

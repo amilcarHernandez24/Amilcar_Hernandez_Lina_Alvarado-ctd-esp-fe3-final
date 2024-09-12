@@ -36,3 +36,15 @@ h1 {
   margin: 0 auto;
   padding: 80px 0px ;
 }
+
+.home_dark{
+  background-color: var(--dark-background)
+}
+
+.home_dark .main_section_title{
+background-color: #0c111694
+} 
+
+.home_dark .title_light, .home_dark p, .home_dark h2{
+  color: var(--beige);
+} 

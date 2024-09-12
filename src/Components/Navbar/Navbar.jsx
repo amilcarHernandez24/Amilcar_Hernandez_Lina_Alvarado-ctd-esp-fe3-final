@@ -1,11 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/Logo.svg";
+import logoWhite from "../../assets/logo-white.svg"
 import iconMoon from "../../assets/icon_moon.svg";
 import iconSun from "../../assets/icon_sun.svg";
 import styles from "./navbar.module.css";
 import { useDentistStates } from "../utils/global.context";
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
   const { state, dispatch } = useDentistStates();
@@ -15,9 +14,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={styles.nav_light}>
+    <nav className={state.theme ? styles.nav_light : styles.nav_dark}>
       <Link to={"/"}>
-        <img src={logo} className={styles.logo} alt="Logo Dental Studio" />
+        <img src={state.theme ? logo : logoWhite} className={styles.logo} alt="Logo Dental Studio" />
       </Link>
       <div className={styles.div_links}>
         <NavLink
