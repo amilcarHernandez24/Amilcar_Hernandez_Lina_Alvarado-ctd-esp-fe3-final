@@ -24,7 +24,7 @@ const Card = ({ currentDentist }) => {
       <p>{`${username} - ${id}`}</p>
 
       <button onClick={handleFavs} className={styles.favButton}>
-        {isFav ? "⭐" : "Agregar"}
+        {isFav ? "⭐" : "★"}
       </button>
     </div>
   );
