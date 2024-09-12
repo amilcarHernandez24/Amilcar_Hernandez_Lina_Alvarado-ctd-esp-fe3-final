@@ -7,7 +7,7 @@ import { useDentistStates } from "../Components/utils/global.context";
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
- const {dentists} = useDentistStates()
+  const { state } = useDentistStates();
 
   return (
     <main>
@@ -21,16 +21,16 @@ const Home = () => {
         </div>
         <img src={dentistImg} alt="" />
       </section>
-      
-      <section  className={styles.container_cards}>
-      <h2>Conoce a Nuestros Dentistas Destacados</h2>
-      <p>Agrega a tus favoritos</p>
 
-      <section className={styles.card_grid}>
-        {dentists.map((dentist) => (
-          <Card key={dentist.id} currentDentist={dentist} />
-        ))}
-      </section>
+      <section className={styles.container_cards}>
+        <h2>Conoce a Nuestros Dentistas Destacados</h2>
+        <p>Agrega a tus favoritos</p>
+
+        <section className={styles.card_grid}>
+          {state.dentists.map((dentist) => (
+            <Card key={dentist.id} currentDentist={dentist} />
+          ))}
+        </section>
       </section>
     </main>
   );
