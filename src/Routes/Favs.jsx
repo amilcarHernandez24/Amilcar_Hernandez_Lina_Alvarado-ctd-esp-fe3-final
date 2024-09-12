@@ -6,14 +6,22 @@ import { useDentistStates } from "../Components/utils/global.context";
 
 const Favs = () => {
   const { state } = useDentistStates();
+  const favs = state.favs;
+
   return (
     <>
-      <h1>Dentists Favs</h1>
-      <div className="card-grid">
-        {state.favs.map((dentist) => (
-          <Card key={dentist.id} currentDentist={dentist} />
-        ))}
-      </div>
+      {favs.length === 0 ? (
+        <h1>No hay dentistas favoritos</h1>
+      ) : (
+        <>
+          <h1>Dentistas favoritos</h1>
+          <div className="card-grid">
+            {state.favs.map((dentist) => (
+              <Card key={dentist.id} currentDentist={dentist} />
+            ))}
+          </div>
+        </>
+      )}
     </>
   );
 };
