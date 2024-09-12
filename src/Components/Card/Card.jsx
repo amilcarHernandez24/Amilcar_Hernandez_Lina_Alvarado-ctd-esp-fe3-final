@@ -5,25 +5,26 @@ import { useDentistStates } from "../utils/global.context";
 
 const Card = ({ currentDentist }) => {
   const { name, username, id } = currentDentist;
+  const { state, dispatch } = useDentistStates();
+  const isFav = state.favs.find((fav) => fav.id == id);
 
-  const { setFavs } = useDentistStates();
-
-  const addFav = () => {
-    // Aqui iria la logica para agregar la Card en el localStorage
-    setFavs((favs)=> [...favs, currentDentist])
+  const handleFavs = () => {
+    dispatch({
+      type: isFav ? "REMOVE_FAV" : "ADD_FAV",
+      payload: currentDentist,
+    });
   };
 
   return (
     <div className={styles.card}>
-      <img src={profileImg} alt="profile dentist"/>
+      <img src={profileImg} alt="profile dentist" />
       <Link to={"/detail/" + id} className={styles.link_text}>
         <h3>{name}</h3>
       </Link>
       <p>{`${username} - ${id}`}</p>
 
-      {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-      <button onClick={addFav} className={styles.favButton}>
-        Agregar 
+      <button onClick={handleFavs} className={styles.favButton}>
+        {isFav ? "⭐" : "Agregar"}
       </button>
     </div>
   );
