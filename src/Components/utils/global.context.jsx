@@ -5,7 +5,7 @@ import { reducer } from "../../Reducers/reducer.js";
 export const ContextGlobal = createContext();
 const lsFavs = JSON.parse(localStorage.getItem("favs")) || [];
 
-export const initialState = { theme: "", dentists: [], favs: lsFavs };
+export const initialState = { theme: true, dentists: [], favs: lsFavs };
 
 export const ContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);

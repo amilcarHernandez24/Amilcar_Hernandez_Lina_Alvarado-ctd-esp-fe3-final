@@ -44,3 +44,10 @@ nav{
 .button_light:hover{
   background-color: var(--dark-blue);
 }
+
+.button_dark {
+  border: none;
+  background-color: var(--Beige);
+  border-radius:100%;
+  padding: 16px;
+}
