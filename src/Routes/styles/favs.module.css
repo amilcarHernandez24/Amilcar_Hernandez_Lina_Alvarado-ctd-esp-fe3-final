@@ -1,0 +1,28 @@
+.section_favs{
+    width: 80%;
+    margin: 0 auto;
+    min-height: 75vh;
+}
+
+.card_grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, auto); 
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .section_dark{
+    padding: 20px ;
+    background-color:  var(--dark-background);
+  }
+
+  .section_dark h2 {
+    margin: 0;
+    color: var(--beige);
+  }
+
+  .section_dark p{
+    color: var(--beige);
+  }

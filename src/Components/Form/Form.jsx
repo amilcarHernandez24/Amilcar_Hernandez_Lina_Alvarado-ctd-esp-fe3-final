@@ -1,8 +1,11 @@
 import { useState } from "react";
 import styles from "./form.module.css";
 import SuccessMessage from "./sucessMessage/SuccessMessage";
+import { useDentistStates } from "../utils/global.context";
 
 const Form = () => {
+  const { state } = useDentistStates();
+
   const [user, setUser] = useState({ name: "", email: "" });
   const [error, setError] = useState({ name: "", email: "" });
   const [successMessage, setSuccessMessage] = useState("");
@@ -61,7 +64,10 @@ const Form = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={handleSubmit}
+        className={!state.theme && styles.form_dark}
+      >
         <label className={styles.label}>Nombre completo</label>
         <input
           type="text"

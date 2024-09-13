@@ -17,7 +17,9 @@ const Footer = () => {
       <div className={styles.footer_section}>
         <span className={styles.subtitle}>Desarrollado por</span>
         <span>
-          @Amilcar Hernandez & @Lina Alvarado</span>
+          <a href="https://github.com/amilcarHernandez24"> @Amilcar Hernandez </a>
+          <a href="https://github.com/LinaAlvarado">  & @Lina Alvarado</a>
+        </span>
       </div>
     </footer>
   );

@@ -1,5 +1,7 @@
 import styles from "./card.module.css";
 import profileImg from "../../assets/profile_dentist.webp";
+import starNoFill from "../../assets/star_no_fill.svg";
+import star from "../../assets/star_fill.svg";
 import { Link } from "react-router-dom";
 import { useDentistStates } from "../utils/global.context";
 
@@ -16,15 +18,27 @@ const Card = ({ currentDentist }) => {
   };
 
   return (
-    <div className={styles.card}>
-      <img src={profileImg} alt="profile dentist" />
+    <div className={state.theme ? styles.card : styles.card_dark}>
+      <img
+        className={styles.imgProfile}
+        src={profileImg}
+        alt="profile dentist"
+      />
       <Link to={"/detail/" + id} className={styles.link_text}>
         <h3>{name}</h3>
       </Link>
       <p>{`${username} - ${id}`}</p>
 
-      <button onClick={handleFavs} className={styles.favButton}>
-        {isFav ? "⭐" : "★"}
+      <button
+        onClick={handleFavs}
+        className={styles.favButton}
+        aria-label={isFav ? "Remove from favorites" : "Add to favorites"}
+      >
+        <img
+          className={styles.star}
+          src={isFav ? star : starNoFill}
+          alt={isFav ? "Starred icon" : "Unstarred icon"}
+        />
       </button>
     </div>
   );

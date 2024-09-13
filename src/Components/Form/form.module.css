@@ -56,3 +56,11 @@ font-family: "Montserrat", sans-serif;
     font-size: 16px;
     margin-top: 10px;
   }
+
+  .form_dark input{
+    background-color: var(--dark-background);
+  }
+
+  .form_dark label{
+    color: var(--beige);
+  }
