@@ -1,19 +1,44 @@
 import styles from "./card.module.css";
+import profileImg from "../../assets/profile_dentist.webp";
+import starNoFill from "../../assets/star_no_fill.svg";
+import star from "../../assets/star_fill.svg";
+import { Link } from "react-router-dom";
+import { useDentistStates } from "../utils/global.context";
 
-const Card = () => {
-  const addFav = () => {
-    // Aqui iria la logica para agregar la Card en el localStorage
+const Card = ({ currentDentist }) => {
+  const { name, username, id } = currentDentist;
+  const { state, dispatch } = useDentistStates();
+  const isFav = state.favs.find((fav) => fav.id == id);
+
+  const handleFavs = () => {
+    dispatch({
+      type: isFav ? "REMOVE_FAV" : "ADD_FAV",
+      payload: currentDentist,
+    });
   };
 
   return (
-    <div className={styles.card}>
-      {/* En cada card deberan mostrar en name - username y el id */}
+    <div className={state.theme ? styles.card : styles.card_dark}>
+      <img
+        className={styles.imgProfile}
+        src={profileImg}
+        alt="profile dentist"
+      />
+      <Link to={"/detail/" + id} className={styles.link_text}>
+        <h3>{name}</h3>
+      </Link>
+      <p>{`${username} - ${id}`}</p>
 
-      {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
-
-      {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-      <button onClick={addFav} className={styles.favButton}>
-        Add fav
+      <button
+        onClick={handleFavs}
+        className={styles.favButton}
+        aria-label={isFav ? "Remove from favorites" : "Add to favorites"}
+      >
+        <img
+          className={styles.star}
+          src={isFav ? star : starNoFill}
+          alt={isFav ? "Starred icon" : "Unstarred icon"}
+        />
       </button>
     </div>
   );
