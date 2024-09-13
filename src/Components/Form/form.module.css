@@ -59,6 +59,7 @@ font-family: "Montserrat", sans-serif;
 
   .form_dark input{
     background-color: var(--dark-background);
+    color: var(--beige);
   }
 
   .form_dark label{
